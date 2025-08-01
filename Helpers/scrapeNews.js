@@ -13,11 +13,11 @@ async function scrapeSections() {
     // Select only nav <ul> elements where the sections are
     $('ul[aria-labelledby$="-links-column-header"]').each(function () {
         $(this).find("a").each(function () {
-            const title = $(this).text().trim();
+            const sectionId = $(this).text().trim();
             const href = $(this).attr("href");
 
             if (href && href.startsWith("https://www.nytimes.com/section")) {
-                sectionLinks.push({ title, url: href });
+                sectionLinks.push({ sectionId, url: href });
             }
         });
     });

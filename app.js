@@ -7,6 +7,8 @@ const app = express();
 app.use(express.json());
 app.use(helmet());
 
+// Routes here \/
+app.use("/", newsRouter);
 
 // Health Check
 app.get("/ping", (req, res) => {
@@ -22,8 +24,6 @@ app.use((req, res) => {
     return res.status(404).json({error: "Endpoint not found"});
 })
 
-// Routes here \/
-app.use("/", newsRouter);
 
 
 

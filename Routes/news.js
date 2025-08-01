@@ -19,7 +19,7 @@ newsRouter.get("/homepage", async (req, res) => {
     }
 });
 
-newsRouter.get("/newsSections", async (req, res) => {
+newsRouter.get("/sections", async (req, res) => {
     const data = cache.get("sections");
     if(data) return res.status(200).json(data);
 
